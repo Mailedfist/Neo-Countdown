@@ -37,7 +37,7 @@ void loop() {
  // set timer for 24h   
  //when timer expires, change color of neopixel
 
- delay (86400000);
+ delay (86400000); // this will need to be adjusted to match uC cycles taken for other instructions
  // change pixel colour values
 
  
