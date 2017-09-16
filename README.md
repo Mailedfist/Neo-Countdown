@@ -1,5 +1,4 @@
-# hello-world
-Repo for derping around
+# Neo-Countdown
 
 In this repo I'm going to try and build arduino code,
 this code will run a 256 day countdown, 
