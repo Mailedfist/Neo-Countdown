@@ -8,6 +8,7 @@
 
 //initiate variables
 int daysLeft = 255;
+int octsLeft = 32; //as strip had eight pixels, every eight days the colour changes
 int pixel_number = 0;
 int red = 255;
 int green = 255;
@@ -39,6 +40,17 @@ void loop() {
 
  delay (86400000); // this will need to be adjusted to match uC cycles taken for other instructions
  // change pixel colour values
+if (octsLeft - 3 * (octsLeft/3)) == 0{
+  
+}
+  
+elseif (octsLeft - 3 * (octsLeft/3)) == 1{
+  
+}
 
+elseif (octsLeft - 3 * (octsLeft/3)) == 2{
+  
+}
+  
  
 }
