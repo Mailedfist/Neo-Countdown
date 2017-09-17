@@ -25,7 +25,7 @@ void setup() {
   // End of trinket special code
 
   strip.begin(); // This initializes the NeoPixel library.
-  strip.setbrightness(128); // Reduce the brightness of the strip
+  strip.setBrightness(128); // Reduce the brightness of the strip
   strip.show(); // Initialize all pixels to 'off'
 }
 
