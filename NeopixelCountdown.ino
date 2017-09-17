@@ -41,6 +41,9 @@ void loop() {
  delay (86400000); // this will need to be adjusted to match uC cycles taken for other instructions
  
  daysLeft = daysLeft - 1; //reduce day count
+  
+  //move effect to next pixel
+  pixel_number = ((pixel_number + 1) - 8 * ((pixel_number + 1)/8))
  
  // change pixel colour values
 if (octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft =/= 0 {
