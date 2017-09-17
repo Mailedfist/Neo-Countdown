@@ -5,12 +5,13 @@
 #define NUM_LEDS     8
 
 //initiate variables
-int daysLeft = 255;
-int octsLeft = 32; //as strip had eight pixels, every eight days the colour changes
-int pixel_number = 0;
-int red = 255;
-int green = 255;
-int blue = 255;
+uint_fast8_t daysLeft = 255;
+uint_fast8_t octsLeft = 32; //as strip had eight pixels, every eight days the colour changes
+uint_fast8_t pixel_number = 0;
+uint_fast8_t red = 255;
+uint_fast8_t green = 255;
+uint_fast8_t blue = 255;
+
 CRGB leds[NUM_LEDS];
 
 void setup() {
