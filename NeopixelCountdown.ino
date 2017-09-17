@@ -39,6 +39,9 @@ void loop() {
  //when timer expires, change color of neopixel
 
  delay (86400000); // this will need to be adjusted to match uC cycles taken for other instructions
+ 
+ daysLeft = daysLeft - 1; //reduce day count
+ 
  // change pixel colour values
 if (octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft =/= 0 {
   red = red - 10;
