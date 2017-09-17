@@ -40,17 +40,21 @@ void loop() {
 
  delay (86400000); // this will need to be adjusted to match uC cycles taken for other instructions
  // change pixel colour values
-if (octsLeft - 3 * (octsLeft/3)) == 0{
-  
+if (octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft =/= 0 {
+  red = red - 10;
 }
   
 elseif (octsLeft - 3 * (octsLeft/3)) == 1{
-  
+  blue = blue - 10;
 }
 
 elseif (octsLeft - 3 * (octsLeft/3)) == 2{
-  
+  green = green - 10;
 }
-  
+else {
+  red = 0;
+  blue = 0;
+  green = 0;
+}
  
 }
