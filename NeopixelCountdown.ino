@@ -25,7 +25,7 @@ void setup() {
   // End of trinket special code
 
   strip.begin(); // This initializes the NeoPixel library.
-  strip.setBrightness(50); // Reduce the brightness of the strip
+  strip.setBrightness(30); // Reduce the brightness of the strip
   strip.show(); // Initialize all pixels to 'off'
 }
 
@@ -39,7 +39,7 @@ void loop() {
  // set timer for 24h   
  //when timer expires, change color of neopixel
 
- delay (3000); // this will need to be adjusted to match uC cycles taken for other instructions
+ delay (500); // this will need to be adjusted to match uC cycles taken for other instructions
  // above delay shortened for testing
  daysLeft = daysLeft - 1; //reduce day count
   
@@ -49,15 +49,15 @@ void loop() {
  // change pixel colour values
 
 if ((octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft != 0 ){
-  red = red - 10;
+  red = red - 20;
 }
   
 else if (((octsLeft - 3 * (octsLeft/3)) == 1)){
-  blue = blue - 10;
+  blue = blue - 20;
 }
 
 else if ((octsLeft - 3 * (octsLeft/3)) == 2){
-  green = green - 10;
+  green = green - 20;
 }
 else {
   red = 0;
