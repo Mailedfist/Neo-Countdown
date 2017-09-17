@@ -3,7 +3,7 @@
 #ifdef __AVR__
   #include <avr/power.h>
 #endif
-#define PIN            1
+#define PIN            5 //pin 5 for testing on ardiuno uno
 #define NUMPIXELS      8
 
 //initiate variables
@@ -25,7 +25,7 @@ void setup() {
   // End of trinket special code
 
   strip.begin(); // This initializes the NeoPixel library.
-  strip.setBrightness(128); // Reduce the brightness of the strip
+  strip.setBrightness(50); // Reduce the brightness of the strip
   strip.show(); // Initialize all pixels to 'off'
 }
 
@@ -44,18 +44,19 @@ void loop() {
  daysLeft = daysLeft - 1; //reduce day count
   
   //move effect to next pixel
-  pixel_number = ((pixel_number + 1) - 8 * ((pixel_number + 1)/8))
+  pixel_number = ((pixel_number + 1) - 8 * ((pixel_number + 1)/8));
  
  // change pixel colour values
-if (octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft =/= 0 {
+
+if ((octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft != 0 ){
   red = red - 10;
 }
   
-elseif (octsLeft - 3 * (octsLeft/3)) == 1{
+else if (((octsLeft - 3 * (octsLeft/3)) == 1)){
   blue = blue - 10;
 }
 
-elseif (octsLeft - 3 * (octsLeft/3)) == 2{
+else if ((octsLeft - 3 * (octsLeft/3)) == 2){
   green = green - 10;
 }
 else {
