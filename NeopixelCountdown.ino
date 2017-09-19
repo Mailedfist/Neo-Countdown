@@ -1,7 +1,7 @@
 #include <FastLED.h>
 
   //FASTLED INT
-#define DATA_PIN            5 //pin 5 for testing on ardiuno uno
+#define DATA_PIN     5  //pin 5 for testing on ardiuno uno
 #define NUM_LEDS     8
 
 //initiate variables
