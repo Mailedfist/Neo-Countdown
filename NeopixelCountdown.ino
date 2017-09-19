@@ -89,7 +89,7 @@ else {
   
  delay (500); // this will need to be adjusted to match uC cycles taken for other instructions
  // above delay shortened for testing
- daysLeft = daysLeft - 1; //reduce day count
+ daysLeft =  -- daysLeft; //reduce day count
   
  
 }
