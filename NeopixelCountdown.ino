@@ -6,7 +6,6 @@
 
 //initiate variables
 uint_fast8_t daysLeft = 255;
-uint_fast8_t octsLeft = 32; //as strip had eight pixels, every eight days the colour changes
 uint_fast8_t pixel_number = 0;
 uint_fast8_t red = 255;
 uint_fast8_t green = 255;
@@ -22,20 +21,10 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-// pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-    leds[pixel_number].setRGB(red, green, blue); // 
-    FastLED.show(); // This sends the updated pixel color to the hardware.
- //for daysLeft > 0
- // set timer for 24h   
- //when timer expires, change color of neopixel
   
- delay (500); // this will need to be adjusted to match uC cycles taken for other instructions
- // above delay shortened for testing
- daysLeft = daysLeft - 1; //reduce day count
- 
- // use strip as a binary counter from 255 (all lit) to 0 (all off)
- 
- // determine which LEDs should be lit (there must be a better way?) 
+  // use strip as a binary counter from 255 (all lit) to 0 (all off)
+  
+   // determine which LEDs should be lit (there must be a better way?) 
 if (daysLeft%2 == 0) {
    led8 = false;
  }
@@ -82,6 +71,22 @@ else {
  if (daysLeft%256 == 0) {
    led1 = false;
  }
- 
+  
+  // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
+  leds[pixel_number].setRGB(red, green, blue); // 
+   
+  // Dim a color by 25% (64/256ths)
+  // using "video" scaling, meaning: never fading to full black
+  leds[i].fadeLightBy( 64 );
+  
+  FastLED.show(); // This sends the updated pixel color to the hardware.
+ //for daysLeft > 0
+ // set timer for 24h   
+ //when timer expires, change color of neopixel
+  
+ delay (500); // this will need to be adjusted to match uC cycles taken for other instructions
+ // above delay shortened for testing
+ daysLeft = daysLeft - 1; //reduce day count
+  
  
 }
