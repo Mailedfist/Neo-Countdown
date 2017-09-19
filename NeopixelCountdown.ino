@@ -76,8 +76,17 @@ else {
  }
   
   // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-  leds[pixel_number].setRGB(red, green, blue); // 
-   
+  if (64<=daysLeft<128) {
+    red = 240 ;
+    green = 136 ;
+    blue = 16 ;
+  }
+  else if (16<=daysLeft<64) {
+    red = 16 ;
+    green = 240 ;
+    blue = 46 ;
+  }
+  
   // Dim a color by 25% (64/256ths)
   // using "video" scaling, meaning: never fading to full black
   leds[i].fadeLightBy( 64 );
