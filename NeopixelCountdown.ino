@@ -28,31 +28,60 @@ void loop() {
  //for daysLeft > 0
  // set timer for 24h   
  //when timer expires, change color of neopixel
-
+  
  delay (500); // this will need to be adjusted to match uC cycles taken for other instructions
  // above delay shortened for testing
  daysLeft = daysLeft - 1; //reduce day count
-  
-  //move effect to next pixel
-  pixel_number = ((pixel_number + 1) - 8 * ((pixel_number + 1)/8));
  
- // change pixel colour values
-
-if ((octsLeft - 3 * (octsLeft/3)) == 0 && daysLeft != 0 ){
-  red = red - 20;
-}
-  
-else if (((octsLeft - 3 * (octsLeft/3)) == 1)){
-  blue = blue - 20;
-}
-
-else if ((octsLeft - 3 * (octsLeft/3)) == 2){
-  green = green - 20;
-}
+ // use strip as a binary counter from 255 (all lit) to 0 (all off)
+ 
+ // determine which LEDs should be lit (there must be a better way?) 
+if (daysLeft%2 == 0) {
+   led8 = false;
+ }
 else {
-  red = 0;
-  blue = 0;
-  green = 0;
-}
+  led8 = true;
+ }
+  
+ if (daysLeft%4 == 0) {
+   led7 = false;
+ }
+ else {
+   led7 = true;
+ }
+ if (daysLeft%8 == 0) {
+   led6 = false;
+ }
+ else {
+   led6 = true;
+ }
+ if (daysLeft%16 == 0) {
+   led5 = false;
+ }
+ else {
+   led5 = true;
+ }
+ if (daysLeft%32 == 0) {
+   led4 = false;
+ }
+ else {
+   led4 = true;
+ }
+ if (daysLeft%64 == 0) {
+   led3 = false;
+ }
+ else {
+   led3 = true;
+ }
+ if (daysLeft%128 == 0) {
+   led2 = false;
+ }
+ else {
+   led2 = true;
+ }
+ if (daysLeft%256 == 0) {
+   led1 = false;
+ }
+ 
  
 }
