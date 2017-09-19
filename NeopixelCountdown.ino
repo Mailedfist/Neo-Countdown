@@ -7,9 +7,9 @@
 //initiate variables
 uint_fast8_t daysLeft = 255;
 uint_fast8_t pixel_number = 0;
-uint_fast8_t red = 255;
-uint_fast8_t green = 255;
-uint_fast8_t blue = 255;
+uint_fast8_t red = 235;
+uint_fast8_t green = 10;
+uint_fast8_t blue = 85;
 
 CRGB leds[NUM_LEDS];
 
@@ -26,50 +26,53 @@ void loop() {
   
    // determine which LEDs should be lit (there must be a better way?) 
 if (daysLeft%2 == 0) {
-   led8 = false;
+   leds[7].setRGB(0, 0, 0);
  }
 else {
-  led8 = true;
+   leds[7].setRGB(red, green, blue);
  }
   
  if (daysLeft%4 == 0) {
-   led7 = false;
+   leds[6].setRGB(0, 0, 0);
  }
  else {
-   led7 = true;
+   leds[6].setRGB(red,green,blue);
  }
  if (daysLeft%8 == 0) {
-   led6 = false;
+   leds[5].setRGB(0, 0, 0);
  }
  else {
-   led6 = true;
+   leds[5].setRGB(red,green,blue);
  }
  if (daysLeft%16 == 0) {
-   led5 = false;
+   leds[4].setRGB(0, 0, 0);
  }
  else {
-   led5 = true;
+   leds[4].setRGB(red,green,blue);
  }
  if (daysLeft%32 == 0) {
-   led4 = false;
+   leds[3].setRGB(0, 0, 0);
  }
  else {
-   led4 = true;
+   leds[3].setRGB(red,green,blue);
  }
  if (daysLeft%64 == 0) {
-   led3 = false;
+   leds[2].setRGB(0, 0, 0);
  }
  else {
-   led3 = true;
+   leds[2].setRGB(red,green,blue);
  }
  if (daysLeft%128 == 0) {
-   led2 = false;
+   leds[1].setRGB(0, 0, 0);
  }
  else {
-   led2 = true;
+   leds[1].setRGB(red,green,blue);
  }
  if (daysLeft%256 == 0) {
-   led1 = false;
+   leds[0].setRGB(0, 0, 0);
+ }
+ else {
+   leds[0].setRGB(red,green,blue);
  }
   
   // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
